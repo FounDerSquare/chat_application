@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/new/chat/chat_application
+CMAKE_SOURCE_DIR = /home/new/Documents/chat_application
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/new/chat/chat_application/build
+CMAKE_BINARY_DIR = /home/new/Documents/chat_application/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/chat_application.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/chat_application.dir/flags.make
 
 CMakeFiles/chat_application.dir/src/main.c.o: CMakeFiles/chat_application.dir/flags.make
 CMakeFiles/chat_application.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/chat/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/chat_application.dir/src/main.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/main.c.o   -c /home/new/chat/chat_application/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/Documents/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/chat_application.dir/src/main.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/main.c.o   -c /home/new/Documents/chat_application/src/main.c
 
 CMakeFiles/chat_application.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/chat_application.dir/src/main.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/chat/chat_application/src/main.c > CMakeFiles/chat_application.dir/src/main.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/Documents/chat_application/src/main.c > CMakeFiles/chat_application.dir/src/main.c.i
 
 CMakeFiles/chat_application.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/chat_application.dir/src/main.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/chat/chat_application/src/main.c -o CMakeFiles/chat_application.dir/src/main.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/Documents/chat_application/src/main.c -o CMakeFiles/chat_application.dir/src/main.c.s
 
 CMakeFiles/chat_application.dir/src/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/chat_application.dir/src/main.c.o.provides.build: CMakeFiles/chat_app
 
 CMakeFiles/chat_application.dir/src/GtkFuntions.c.o: CMakeFiles/chat_application.dir/flags.make
 CMakeFiles/chat_application.dir/src/GtkFuntions.c.o: ../src/GtkFuntions.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/chat/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/chat_application.dir/src/GtkFuntions.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/GtkFuntions.c.o   -c /home/new/chat/chat_application/src/GtkFuntions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/Documents/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/chat_application.dir/src/GtkFuntions.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/GtkFuntions.c.o   -c /home/new/Documents/chat_application/src/GtkFuntions.c
 
 CMakeFiles/chat_application.dir/src/GtkFuntions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/chat_application.dir/src/GtkFuntions.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/chat/chat_application/src/GtkFuntions.c > CMakeFiles/chat_application.dir/src/GtkFuntions.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/Documents/chat_application/src/GtkFuntions.c > CMakeFiles/chat_application.dir/src/GtkFuntions.c.i
 
 CMakeFiles/chat_application.dir/src/GtkFuntions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/chat_application.dir/src/GtkFuntions.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/chat/chat_application/src/GtkFuntions.c -o CMakeFiles/chat_application.dir/src/GtkFuntions.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/Documents/chat_application/src/GtkFuntions.c -o CMakeFiles/chat_application.dir/src/GtkFuntions.c.s
 
 CMakeFiles/chat_application.dir/src/GtkFuntions.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/chat_application.dir/src/GtkFuntions.c.o.provides.build: CMakeFiles/c
 
 CMakeFiles/chat_application.dir/src/callbacks.c.o: CMakeFiles/chat_application.dir/flags.make
 CMakeFiles/chat_application.dir/src/callbacks.c.o: ../src/callbacks.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/chat/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/chat_application.dir/src/callbacks.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/callbacks.c.o   -c /home/new/chat/chat_application/src/callbacks.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/Documents/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/chat_application.dir/src/callbacks.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/callbacks.c.o   -c /home/new/Documents/chat_application/src/callbacks.c
 
 CMakeFiles/chat_application.dir/src/callbacks.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/chat_application.dir/src/callbacks.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/chat/chat_application/src/callbacks.c > CMakeFiles/chat_application.dir/src/callbacks.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/Documents/chat_application/src/callbacks.c > CMakeFiles/chat_application.dir/src/callbacks.c.i
 
 CMakeFiles/chat_application.dir/src/callbacks.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/chat_application.dir/src/callbacks.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/chat/chat_application/src/callbacks.c -o CMakeFiles/chat_application.dir/src/callbacks.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/Documents/chat_application/src/callbacks.c -o CMakeFiles/chat_application.dir/src/callbacks.c.s
 
 CMakeFiles/chat_application.dir/src/callbacks.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/chat_application.dir/src/callbacks.c.o.provides.build: CMakeFiles/cha
 
 CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o: CMakeFiles/chat_application.dir/flags.make
 CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o: ../src/GtkLocalTime.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/chat/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o   -c /home/new/chat/chat_application/src/GtkLocalTime.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/Documents/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o   -c /home/new/Documents/chat_application/src/GtkLocalTime.c
 
 CMakeFiles/chat_application.dir/src/GtkLocalTime.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/chat_application.dir/src/GtkLocalTime.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/chat/chat_application/src/GtkLocalTime.c > CMakeFiles/chat_application.dir/src/GtkLocalTime.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/Documents/chat_application/src/GtkLocalTime.c > CMakeFiles/chat_application.dir/src/GtkLocalTime.c.i
 
 CMakeFiles/chat_application.dir/src/GtkLocalTime.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/chat_application.dir/src/GtkLocalTime.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/chat/chat_application/src/GtkLocalTime.c -o CMakeFiles/chat_application.dir/src/GtkLocalTime.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/Documents/chat_application/src/GtkLocalTime.c -o CMakeFiles/chat_application.dir/src/GtkLocalTime.c.s
 
 CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/chat_application.dir/src/interface.c.o: CMakeFiles/chat_application.dir/flags.make
 CMakeFiles/chat_application.dir/src/interface.c.o: ../src/interface.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/chat/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/chat_application.dir/src/interface.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/interface.c.o   -c /home/new/chat/chat_application/src/interface.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/new/Documents/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/chat_application.dir/src/interface.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/chat_application.dir/src/interface.c.o   -c /home/new/Documents/chat_application/src/interface.c
 
 CMakeFiles/chat_application.dir/src/interface.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/chat_application.dir/src/interface.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/chat/chat_application/src/interface.c > CMakeFiles/chat_application.dir/src/interface.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/new/Documents/chat_application/src/interface.c > CMakeFiles/chat_application.dir/src/interface.c.i
 
 CMakeFiles/chat_application.dir/src/interface.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/chat_application.dir/src/interface.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/chat/chat_application/src/interface.c -o CMakeFiles/chat_application.dir/src/interface.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/new/Documents/chat_application/src/interface.c -o CMakeFiles/chat_application.dir/src/interface.c.s
 
 CMakeFiles/chat_application.dir/src/interface.c.o.requires:
 
@@ -209,7 +209,7 @@ chat_application: /usr/lib/x86_64-linux-gnu/libpangoxft-1.0.so
 chat_application: /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so
 chat_application: /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so
 chat_application: CMakeFiles/chat_application.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/new/chat/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable chat_application"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/new/Documents/chat_application/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable chat_application"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chat_application.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -230,6 +230,6 @@ CMakeFiles/chat_application.dir/clean:
 .PHONY : CMakeFiles/chat_application.dir/clean
 
 CMakeFiles/chat_application.dir/depend:
-	cd /home/new/chat/chat_application/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/new/chat/chat_application /home/new/chat/chat_application /home/new/chat/chat_application/build /home/new/chat/chat_application/build /home/new/chat/chat_application/build/CMakeFiles/chat_application.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/new/Documents/chat_application/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/new/Documents/chat_application /home/new/Documents/chat_application /home/new/Documents/chat_application/build /home/new/Documents/chat_application/build /home/new/Documents/chat_application/build/CMakeFiles/chat_application.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/chat_application.dir/depend
 

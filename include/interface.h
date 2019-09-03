@@ -4,7 +4,7 @@
  * @File name: 
  * @Version: 
  * @Date: 2019-08-31 09:02:24 -0700
- * @LastEditTime: 2019-09-02 00:31:34 -0700
+ * @LastEditTime: 2019-09-03 01:29:49 -0700
  * @LastEditors: 
  * @Description: 
  */
@@ -18,12 +18,12 @@
  * @Description: WINAPPEAR 数据类型
  *               包含窗口标题、宽高、位置信息
  */
-typedef struct _WinAppear
-{
-    gchar* title;
-    gint width,height;
-    GtkWindowPosition position;
-}WINAPPEAR;
+// typedef struct _WinAppear
+// {
+//     gchar* title;
+//     gint width,height;
+//     GtkWindowPosition position;
+// }WINAPPEAR;
 
 typedef struct sticker_info{
     GtkWidget *sticker_window;

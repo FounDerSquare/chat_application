@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/new/chat/chat_application/src/GtkFuntions.c" "/home/new/chat/chat_application/build/CMakeFiles/chat_application.dir/src/GtkFuntions.c.o"
-  "/home/new/chat/chat_application/src/GtkLocalTime.c" "/home/new/chat/chat_application/build/CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o"
-  "/home/new/chat/chat_application/src/callbacks.c" "/home/new/chat/chat_application/build/CMakeFiles/chat_application.dir/src/callbacks.c.o"
-  "/home/new/chat/chat_application/src/interface.c" "/home/new/chat/chat_application/build/CMakeFiles/chat_application.dir/src/interface.c.o"
-  "/home/new/chat/chat_application/src/main.c" "/home/new/chat/chat_application/build/CMakeFiles/chat_application.dir/src/main.c.o"
+  "/home/new/Documents/chat_application/src/GtkFuntions.c" "/home/new/Documents/chat_application/build/CMakeFiles/chat_application.dir/src/GtkFuntions.c.o"
+  "/home/new/Documents/chat_application/src/GtkLocalTime.c" "/home/new/Documents/chat_application/build/CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o"
+  "/home/new/Documents/chat_application/src/callbacks.c" "/home/new/Documents/chat_application/build/CMakeFiles/chat_application.dir/src/callbacks.c.o"
+  "/home/new/Documents/chat_application/src/interface.c" "/home/new/Documents/chat_application/build/CMakeFiles/chat_application.dir/src/interface.c.o"
+  "/home/new/Documents/chat_application/src/main.c" "/home/new/Documents/chat_application/build/CMakeFiles/chat_application.dir/src/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

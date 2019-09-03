@@ -1,3 +1,3 @@
-/home/new/chat/chat_application/build/CMakeFiles/edit_cache.dir
-/home/new/chat/chat_application/build/CMakeFiles/rebuild_cache.dir
-/home/new/chat/chat_application/build/CMakeFiles/chat_application.dir
+/home/new/Documents/chat_application/build/CMakeFiles/edit_cache.dir
+/home/new/Documents/chat_application/build/CMakeFiles/rebuild_cache.dir
+/home/new/Documents/chat_application/build/CMakeFiles/chat_application.dir

@@ -36,37 +36,37 @@ string.h
 
 ../include/interface.h
 
-/home/new/chat/chat_application/src/GtkFuntions.c
+/home/new/Documents/chat_application/src/GtkFuntions.c
 head.h
-/home/new/chat/chat_application/src/head.h
+/home/new/Documents/chat_application/src/head.h
 interface.h
-/home/new/chat/chat_application/src/interface.h
+/home/new/Documents/chat_application/src/interface.h
 
-/home/new/chat/chat_application/src/GtkLocalTime.c
+/home/new/Documents/chat_application/src/GtkLocalTime.c
 head.h
-/home/new/chat/chat_application/src/head.h
+/home/new/Documents/chat_application/src/head.h
 
-/home/new/chat/chat_application/src/callbacks.c
+/home/new/Documents/chat_application/src/callbacks.c
 head.h
-/home/new/chat/chat_application/src/head.h
+/home/new/Documents/chat_application/src/head.h
 interface.h
-/home/new/chat/chat_application/src/interface.h
+/home/new/Documents/chat_application/src/interface.h
 
-/home/new/chat/chat_application/src/interface.c
+/home/new/Documents/chat_application/src/interface.c
 head.h
-/home/new/chat/chat_application/src/head.h
+/home/new/Documents/chat_application/src/head.h
 callbacks.h
-/home/new/chat/chat_application/src/callbacks.h
+/home/new/Documents/chat_application/src/callbacks.h
 interface.h
-/home/new/chat/chat_application/src/interface.h
+/home/new/Documents/chat_application/src/interface.h
 
-/home/new/chat/chat_application/src/main.c
+/home/new/Documents/chat_application/src/main.c
 head.h
-/home/new/chat/chat_application/src/head.h
+/home/new/Documents/chat_application/src/head.h
 callbacks.h
-/home/new/chat/chat_application/src/callbacks.h
+/home/new/Documents/chat_application/src/callbacks.h
 interface.h
-/home/new/chat/chat_application/src/interface.h
+/home/new/Documents/chat_application/src/interface.h
 
 /usr/include/atk-1.0/atk/atk-enum-types.h
 atk/atkversion.h

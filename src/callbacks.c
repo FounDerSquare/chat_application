@@ -4,7 +4,7 @@
  * @File name: 
  * @Version: 
  * @Date: 2019-08-31 19:45:05 -0700
- * @LastEditTime: 2019-09-02 20:34:01 -0700
+ * @LastEditTime: 2019-09-03 01:38:55 -0700
  * @LastEditors: 
  * @Description: 
  */
@@ -203,6 +203,17 @@ gboolean on_window_delete_event (GtkWidget* widget,GdkEvent *event,gpointer data
 }
 
 /**
+ * @Author: 邓方晴
+ * @Description: 关闭子窗口
+ * @Param: 
+ * @Return: 
+ * @Throw: 
+ */
+void on_subwindow_delete(GtkWidget* subwindow,GdkEvent *event,gpointer data){
+    gtk_widget_destroy(subwindow);
+}
+
+/**
  * @Author: 王可欣
  * @Description: 点击发送文件按钮的回调函数
  * @Param: 
@@ -256,33 +267,49 @@ void on_send(GtkButton * button,FromToWin* ftw)
 
 /**
  * @Author: 邓方晴
+ * @Description: 创建消息记录窗口
+ * @Param: 
+ * @Return: GtkWidget指针
+ * @Throw: 
+ */
+GtkWidget* create_log_window() {
+
+    TextView messagelog;
+    GtkWidget *pop,*scroll;
+    GtkTextIter end;
+
+    pop = gtk_window_new(GDK_WINDOW_TOPLEVEL);
+    g_signal_connect(G_OBJECT(pop),"destroy",G_CALLBACK(on_subwindow_delete),NULL);
+    gtk_window_set_title(GTK_WINDOW(pop),"消息记录");
+    gtk_window_set_default_size(GTK_WINDOW(pop),500,300);
+    gtk_window_set_position(GTK_WINDOW(pop),GTK_WIN_POS_CENTER);
+    gtk_container_set_border_width(GTK_CONTAINER(pop),10);
+
+    scroll = gtk_scrolled_window_new(NULL,NULL);
+    gtk_container_add(GTK_CONTAINER(pop), scroll);
+
+    messagelog.view = gtk_text_view_new();
+    messagelog.view_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(messagelog.view));
+    gtk_text_buffer_get_end_iter(messagelog.view_buffer,&end);
+    gtk_text_buffer_insert(messagelog.view_buffer,&end,"显示消息记录",-1);
+
+    gtk_container_add(GTK_CONTAINER(scroll),messagelog.view);
+    
+    gtk_widget_show_all(pop);
+
+    return pop;
+
+}
+
+/**
+ * @Author: 邓方晴
  * @Description: 按下“消息记录”
  * @Param: 
  * @Return: 
  * @Throw: 
  */
-void CheckMessageLog(GtkWidget *widget, GdkEvent *event){
-    TextView messagelog;
-    GtkWidget *pop,*scroll;
-    GtkTextIter end;
-    messagelog.view = gtk_text_view_new();
-    messagelog.view_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(messagelog.view));
-    gtk_text_buffer_get_end_iter(messagelog.view_buffer,&end);
-
-    gtk_text_buffer_insert(messagelog.view_buffer,&end,"显示消息记录",-1);
-    
-    pop = gtk_window_new(GDK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(pop),"消息记录");
-    gtk_window_set_default_size(GTK_WINDOW(pop),500,300);
-    gtk_window_set_position(GTK_WINDOW(pop),GTK_WIN_POS_CENTER);
-    gtk_container_set_border_width(GTK_CONTAINER(pop),10);
-    g_signal_connect(G_OBJECT(pop),"delete_event",
-        G_CALLBACK(on_window_delete_event),NULL);
-
-    scroll = gtk_scrolled_window_new(NULL,NULL);
-    gtk_container_add(GTK_CONTAINER(scroll),messagelog.view);
-    gtk_container_add(GTK_CONTAINER(pop), scroll);
-
-    gtk_widget_show_all(pop);
-
+void ClickMessageLog(GtkWidget *widget,gpointer data)
+{
+    GtkWidget *sub_window = create_log_window();
+    //gtk_widget_show(sub_window);
 }

@@ -5,7 +5,7 @@ CMakeFiles/chat_application.dir/src/GtkFuntions.c.o
  ../include/config.h
  ../include/head.h
  ../include/interface.h
- /home/new/chat/chat_application/src/GtkFuntions.c
+ /home/new/Documents/chat_application/src/GtkFuntions.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -566,7 +566,7 @@ CMakeFiles/chat_application.dir/src/GtkFuntions.c.o
 CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o
  ../include/config.h
  ../include/head.h
- /home/new/chat/chat_application/src/GtkLocalTime.c
+ /home/new/Documents/chat_application/src/GtkLocalTime.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -1128,7 +1128,7 @@ CMakeFiles/chat_application.dir/src/callbacks.c.o
  ../include/config.h
  ../include/head.h
  ../include/interface.h
- /home/new/chat/chat_application/src/callbacks.c
+ /home/new/Documents/chat_application/src/callbacks.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -1691,7 +1691,7 @@ CMakeFiles/chat_application.dir/src/interface.c.o
  ../include/config.h
  ../include/head.h
  ../include/interface.h
- /home/new/chat/chat_application/src/interface.c
+ /home/new/Documents/chat_application/src/interface.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h
@@ -2254,7 +2254,7 @@ CMakeFiles/chat_application.dir/src/main.c.o
  ../include/config.h
  ../include/head.h
  ../include/interface.h
- /home/new/chat/chat_application/src/main.c
+ /home/new/Documents/chat_application/src/main.c
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
  /usr/include/atk-1.0/atk/atkaction.h

@@ -4,7 +4,7 @@
  * @File name: 
  * @Version: 
  * @Date: 2019-08-31 19:08:01 -0700
- * @LastEditTime: 2019-09-02 05:44:39 -0700
+ * @LastEditTime: 2019-09-03 01:50:20 -0700
  * @LastEditors: 
  * @Description: 
  */
@@ -137,7 +137,7 @@ GtkWidget* CreateSendToolbar (GtkWidget* window)
     OpenDocu=gtk_toolbar_append_item (GTK_TOOLBAR (toolbar), "", "打开文件", "Private", DocuIcon, 
                                                         GTK_SIGNAL_FUNC (on_file_open_activate), NULL);
     record=gtk_toolbar_append_item (GTK_TOOLBAR (toolbar), "", "消息记录", "Private", RecIcon, 
-                                                        GTK_SIGNAL_FUNC (CheckMessageLog), NULL);                               
+                                                        GTK_SIGNAL_FUNC (ClickMessageLog), NULL);                               
     return toolbar;
 }
 
