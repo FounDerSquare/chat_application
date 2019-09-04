@@ -123,60 +123,6 @@ chat_application/fast:
 	$(MAKE) -f CMakeFiles/chat_application.dir/build.make CMakeFiles/chat_application.dir/build
 .PHONY : chat_application/fast
 
-src/GtkFuntions.o: src/GtkFuntions.c.o
-
-.PHONY : src/GtkFuntions.o
-
-# target to build an object file
-src/GtkFuntions.c.o:
-	$(MAKE) -f CMakeFiles/chat_application.dir/build.make CMakeFiles/chat_application.dir/src/GtkFuntions.c.o
-.PHONY : src/GtkFuntions.c.o
-
-src/GtkFuntions.i: src/GtkFuntions.c.i
-
-.PHONY : src/GtkFuntions.i
-
-# target to preprocess a source file
-src/GtkFuntions.c.i:
-	$(MAKE) -f CMakeFiles/chat_application.dir/build.make CMakeFiles/chat_application.dir/src/GtkFuntions.c.i
-.PHONY : src/GtkFuntions.c.i
-
-src/GtkFuntions.s: src/GtkFuntions.c.s
-
-.PHONY : src/GtkFuntions.s
-
-# target to generate assembly for a file
-src/GtkFuntions.c.s:
-	$(MAKE) -f CMakeFiles/chat_application.dir/build.make CMakeFiles/chat_application.dir/src/GtkFuntions.c.s
-.PHONY : src/GtkFuntions.c.s
-
-src/GtkLocalTime.o: src/GtkLocalTime.c.o
-
-.PHONY : src/GtkLocalTime.o
-
-# target to build an object file
-src/GtkLocalTime.c.o:
-	$(MAKE) -f CMakeFiles/chat_application.dir/build.make CMakeFiles/chat_application.dir/src/GtkLocalTime.c.o
-.PHONY : src/GtkLocalTime.c.o
-
-src/GtkLocalTime.i: src/GtkLocalTime.c.i
-
-.PHONY : src/GtkLocalTime.i
-
-# target to preprocess a source file
-src/GtkLocalTime.c.i:
-	$(MAKE) -f CMakeFiles/chat_application.dir/build.make CMakeFiles/chat_application.dir/src/GtkLocalTime.c.i
-.PHONY : src/GtkLocalTime.c.i
-
-src/GtkLocalTime.s: src/GtkLocalTime.c.s
-
-.PHONY : src/GtkLocalTime.s
-
-# target to generate assembly for a file
-src/GtkLocalTime.c.s:
-	$(MAKE) -f CMakeFiles/chat_application.dir/build.make CMakeFiles/chat_application.dir/src/GtkLocalTime.c.s
-.PHONY : src/GtkLocalTime.c.s
-
 src/callbacks.o: src/callbacks.c.o
 
 .PHONY : src/callbacks.o
@@ -267,12 +213,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... chat_application"
-	@echo "... src/GtkFuntions.o"
-	@echo "... src/GtkFuntions.i"
-	@echo "... src/GtkFuntions.s"
-	@echo "... src/GtkLocalTime.o"
-	@echo "... src/GtkLocalTime.i"
-	@echo "... src/GtkLocalTime.s"
 	@echo "... src/callbacks.o"
 	@echo "... src/callbacks.i"
 	@echo "... src/callbacks.s"

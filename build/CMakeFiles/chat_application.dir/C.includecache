@@ -36,16 +36,6 @@ string.h
 
 ../include/interface.h
 
-/home/new/Documents/chat_application/src/GtkFuntions.c
-head.h
-/home/new/Documents/chat_application/src/head.h
-interface.h
-/home/new/Documents/chat_application/src/interface.h
-
-/home/new/Documents/chat_application/src/GtkLocalTime.c
-head.h
-/home/new/Documents/chat_application/src/head.h
-
 /home/new/Documents/chat_application/src/callbacks.c
 head.h
 /home/new/Documents/chat_application/src/head.h

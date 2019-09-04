@@ -4,7 +4,7 @@
  * @File name: 
  * @Version: 
  * @Date: 2019-08-31 19:08:01 -0700
- * @LastEditTime: 2019-09-03 01:50:20 -0700
+ * @LastEditTime: 2019-09-03 19:28:42 -0700
  * @LastEditors: 
  * @Description: 
  */
@@ -18,6 +18,8 @@ GtkWidget* CreateSendToolbar (GtkWidget* window);
 static gboolean on_drag_drop();
 static void ReceiveDrop(GtkWidget *widget, GdkDragContext *context,
         gint x,gint y,GtkSelectionData *data,guint info,guint time,gpointer user_data);
+static FromToWin* Card;
+static char SendMessage[1024]; 
 
 /**
  * @Author: 王可欣
@@ -36,14 +38,19 @@ GtkWidget* CreateTalkWindow(void)
     GtkWidget* SendBtn;
     GtkWidget *hPaned,*vPaned,*cardPaned;
     TextView mylabelcard,oppolabelcard;
+    ChatWindow* Chat; 
+    //= (ChatWindow*)malloc(sizeof(ChatWindow));
+
+    //TODO:Chat应该在聊天窗口打开时获取聊天双方的ID（char）
 
     TalkWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(TalkWindow),"完整的应用程序窗口");
-    gtk_window_set_default_size(GTK_WINDOW(TalkWindow),800,500);
+    gtk_widget_set_size_request(TalkWindow,800,500);//为了固定窗口的大小，不用defaultset
     gtk_window_set_position(GTK_WINDOW(TalkWindow),GTK_WIN_POS_CENTER);
     gtk_container_set_border_width(GTK_CONTAINER(TalkWindow),10);
 
 
+    //增设最大的两个分隔栏
     hPaned = gtk_hpaned_new();
     gtk_paned_set_position(hPaned,600);
     vPaned = gtk_vpaned_new();
@@ -63,7 +70,9 @@ GtkWidget* CreateTalkWindow(void)
     gtk_text_view_set_editable(GTK_TEXT_VIEW(oppolabelcard.view),FALSE);
     gtk_paned_add1(GTK_PANED(cardPaned), oppolabelcard.view);
     gtk_paned_add2(GTK_PANED(cardPaned), mylabelcard.view);
-    
+    Card->from = mylabelcard.view_buffer;
+    Card->to = oppolabelcard.view_buffer;
+    //
     TalkMenuBox = gtk_vbox_new(FALSE,0);
     gtk_paned_add2(GTK_PANED(vPaned),TalkMenuBox);
     
@@ -77,10 +86,15 @@ GtkWidget* CreateTalkWindow(void)
     SeeText.view = gtk_text_view_new();
     SeeText.view_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(SeeText.view));
 
-    //创建指针保存聊天信息编辑窗口和显示窗口的位置
+    // //创建指针保存聊天信息编辑窗口和显示窗口的位置
     FromToWin *chatwin= (FromToWin *)malloc(sizeof(FromToWin));
     chatwin->from = SendText.view_buffer;
     chatwin->to = SeeText.view_buffer;
+    //保留信息到结构体中
+    // Chat->ftw = (FromToWin* )malloc(sizeof(FromToWin));
+    // Chat->ftw.from = SendText.view_buffer;
+    // Chat->ftw.to = SeeText.view_buffer;
+
 
     //左下，发送表情与文件的工具栏、文本编辑窗口、发送按钮
     gtk_box_pack_start(GTK_BOX(TalkMenuBox),scrolledwindown,TRUE,TRUE,0);
@@ -105,6 +119,8 @@ GtkWidget* CreateTalkWindow(void)
     gtk_box_pack_end(buttonbox,SendBtn,FALSE,FALSE,0); 
 
     gtk_container_add(GTK_CONTAINER(TalkWindow), hPaned);
+
+    gtk_window_set_resizable(GTK_CONTAINER(TalkWindow),FALSE);//固定窗口的大小
 
     gtk_widget_show_all(TalkWindow);
     return TalkWindow;
@@ -137,7 +153,7 @@ GtkWidget* CreateSendToolbar (GtkWidget* window)
     OpenDocu=gtk_toolbar_append_item (GTK_TOOLBAR (toolbar), "", "打开文件", "Private", DocuIcon, 
                                                         GTK_SIGNAL_FUNC (on_file_open_activate), NULL);
     record=gtk_toolbar_append_item (GTK_TOOLBAR (toolbar), "", "消息记录", "Private", RecIcon, 
-                                                        GTK_SIGNAL_FUNC (ClickMessageLog), NULL);                               
+                                                        GTK_SIGNAL_FUNC (create_log_window), NULL);                               
     return toolbar;
 }
 
