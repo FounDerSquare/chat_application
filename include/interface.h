@@ -29,6 +29,8 @@ typedef struct text_view_info{
 typedef struct from_to_windows{
     GtkTextBuffer *from;
     GtkTextBuffer *to;
+    GtkTextView *edit;
+    GtkTextView *show;
 }FromToWin;
 
 /**

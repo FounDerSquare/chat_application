@@ -4,12 +4,14 @@
  * @File name: 
  * @Version: 
  * @Date: 2019-08-31 19:45:05 -0700
- * @LastEditTime: 2019-09-03 10:47:45 -0700
+ * @LastEditTime: 2019-09-04 02:10:36 -0700
  * @LastEditors: 
  * @Description: 
  */
 #include "head.h"
 #include "interface.h"
+
+extern char SendMessage[1024];
 
 static char nowtime[30];//全局变量，显示当前时间
 
@@ -30,6 +32,15 @@ void getThisTime()
     sprintf(nowtime,"%d/%d/%d  %d:%d:%d",l_time->tm_year+1900,l_time->tm_mon+1,l_time->tm_mday,l_time->tm_hour,l_time->tm_min,l_time->tm_sec);
 }
 
+int MyStrlen(const char*s)
+{
+    int len=0;
+    while(s[len]!='\0' && s!=NULL )
+    {
+        len++;
+    }
+    return len;
+}
 /**
  * @Author: 邓方晴
  * @Description: 满足不提前获知目标容量也可以合并字符串
@@ -37,20 +48,48 @@ void getThisTime()
  * @Return: 
  * @Throw: 
  */
-void string_add(char*s1,char*s2)
+char* my_string_add(char* dir,char*s)
 {
-    int len;
+    int p=0,pdir=0;
+    int len = MyStrlen(dir)+MyStrlen(s)+2;
+    char *tmp;
+    tmp = (char*)malloc(sizeof(char)*len);
+    while(dir[p]!='\0')//获取目标字符串的尾地址
+    {
+        tmp[pdir]=dir[p];
+        p++;
+        pdir++;
+    }
+    p=0;
+    while(s[p]!='\0')//加入字符串s1
+    {
+        tmp[pdir]=s[p];
+        pdir++;
+        p++;
+    }
 
-    len = strlen(s1);
-    printf("\n");
-    len+=strlen(s2);
-    len +=5;
-    char* temp;
-    temp = (char*)malloc(sizeof(char)*len);
-    strcpy(temp,s1);
-    strcat(temp,s2);
-    free(s1);
-    s1 = temp;
+    tmp[pdir]='\0';
+
+    return tmp;
+}
+
+char* my_string_new(char*s)
+{
+    int p=0,pdir=0;
+    char* tmp;
+    int len = MyStrlen(s)+2;
+    tmp = (char*)malloc(sizeof(char)*len);
+
+    while(s[p]!='\0')//加入字符串s
+    {
+        tmp[pdir]=s[p];
+        pdir++;
+        p++;
+    }
+
+    tmp[pdir]='\0';
+    return tmp;
+
 }
 
 /**
@@ -76,8 +115,6 @@ void string_add(char*s1,char*s2)
     
     GdkPixbuf *pixbuf=gdk_pixbuf_new_from_file(head,NULL);
     gtk_text_buffer_insert_pixbuf(sinfo->view_buffer,&end,pixbuf);
-    //向缓冲区插入数据
-   // gtk_text_buffer_insert(sinfo->view_buffer,&end,sinfo->str,-1);
     
     GtkWidget *sticker_window = sinfo->sticker_window;
     Emoji **p = sinfo->spointer;
@@ -297,55 +334,65 @@ void on_input_null()
  * @Return: 
  * @Throw: 
  */
+//TODO: 网络是否链接的信号变量需要外部接应
 gboolean isconnected = TRUE;
 
 void on_send(GtkButton * button,FromToWin* ftw)
 {
-    gchar *message;
-    gchar* username,*friendname;//用户名/ID
+    gchar* message;
+    gchar* username;
+    gchar* friendname;
     GtkTextIter start,end,show;
-    gchar* report = "~$\0";//report是最终向服务器发送对字符串TODO:需要有全局或局部变量外部接应？
+    gchar* report;//report是最终向服务器发送对字符串
+    //TODO:report需要有全局或局部变量外部接应
 
-    sprintf(username,"User ");//TODO:此处应有措施传递用户名
-    sprintf(friendname,"Friendname ");
+    username = my_string_new("DengFangqing2746 ");
+    friendname = my_string_new("HeHezi2116  ");
+    //TODO:此处应有措施传递用户名
+    
 
     if(isconnected==FALSE)  return;
     getThisTime();//获取发送信息的时间
 
     gtk_text_buffer_get_bounds(ftw->from,&start,&end);
-    message = gtk_text_buffer_get_text(ftw->from,&start,&end,FALSE);
-    if(message == NULL || strlen(message) == 0)//当输入空字符时
+    //TODO:发表情功能加入后，如何提示输出为空
+    //message = gtk_text_buffer_get_text(ftw->from,&start,&end,FALSE);//获取输入框内文字
+    message = gtk_text_buffer_get_slice(ftw->from,&start,&end,TRUE);
+    //printf("%s",message);
+    if(MyStrlen(message) == 0||message == NULL)//当输入空字符时弹出提示对话框
     {
         on_input_null();
         return;
     }
-    gtk_text_buffer_set_text(ftw->from,"",1);//清空输入框
     gtk_text_buffer_get_end_iter(ftw->to,&show);
-    /////////////////////////////////////////////聊天窗口界面显示
+    /////////////////////聊天窗口界面显示/////////////////////////////
     gtk_text_buffer_insert(ftw->to,&show,username,-1);
     gtk_text_buffer_get_end_iter(ftw->to,&show);
     gtk_text_buffer_insert(ftw->to,&show,nowtime,-1);
     gtk_text_buffer_insert(ftw->to,&show,"\n",-1);
     gtk_text_buffer_get_end_iter(ftw->to,&show);
-    gtk_text_buffer_insert(ftw->to,&end,message,-1);
+    
+    gtk_text_view_set_editable(GTK_TEXT_VIEW(ftw->show),TRUE);//开启编辑权限
+    gtk_text_buffer_insert_range(ftw->to,&show,&start,&end);//含有pixbuf显示
+    gtk_text_view_set_editable(GTK_TEXT_VIEW(ftw->show),FALSE);//关闭编辑权限
     gtk_text_buffer_get_end_iter(ftw->to,&show);
     gtk_text_buffer_insert(ftw->to,&show,"\n",-1);
-
-    ////////////////////////合成发送信息/////////////////////////
-    //strcat(report,"~$ ");
-    string_add(report,nowtime);
-    // strcat(report,nowtime);
-    // strcat(report,"~$ ");
-    // strcat(report,username);
-    // strcat(report,"~$ ");
-    // strcat(report,friendname);
-    // strcat(report,"~$ ");
-    // strcat(report,message);
-    // strcat(report,"~$END\n");
+    
+    gtk_text_buffer_set_text(ftw->from,"",1);//清空输入框
+    ////////////////////////合成发送信息/////////////////////////////
+    //TODO:如何将表情包和文件发送信息转成字符发送
+    report = my_string_new("~$Username: ");
+    report = my_string_add(report,username);
+    report = my_string_add(report,"\n~$Friendname: ");
+    report = my_string_add(report,friendname);
+    report = my_string_add(report,"\n~$Time: ");
+    report = my_string_add(report,nowtime);
+    report = my_string_add(report,"\n~$Message: ");
+    report = my_string_add(report,message);//FIXME:
+    report = my_string_add(report,"\nEND \n");
 
     gtk_text_buffer_get_end_iter(ftw->to,&show);
-    gtk_text_buffer_insert(ftw->to,&show,report,-1);
-
+    gtk_text_buffer_insert(ftw->to,&show,report,-1);//在聊天界面显示，用于验证合成是否成功
 
 }
 
