@@ -35,7 +35,7 @@ typedef struct from_to_windows{
 
 /**
  * @Author: 邓方晴
- * @Description: 聊天窗口属性信息传递用
+ * @Description: 聊天窗口属性信息传递用,在此结构体基础上可以建设用户的窗口数组
  * @Param: FromToWin复合指针，用户自身ID，好友ID，好友资料卡面板TextView，用户资料卡面板TextView
  * @Throw: 
  */
@@ -43,12 +43,25 @@ typedef struct _chat_window{
     gchar* UserID;
     gchar* FriendID;
     FromToWin ftw;
-    TextView* friendcard;
-    TextView* mycard;
+    GtkWidget* friendcard;
+    GtkWidget* mycard;
+    gboolean IS_CREATED;
 }ChatWindow;
+
+typedef struct _signal_on_receive{
+    gchar* time;
+    gchar* message;
+    gchar* sender_name;
+    gchar* sender_ip;
+}SIGNAL;
+
 
 ///////////////函数声明区//////////////
 void on_send(GtkButton * button,FromToWin* ftw);
 GtkWidget* CreateTalkWindow( void );
+
+
+///////////////全局变量声明区/////////////
+SIGNAL Receive_Info; 
 
 #endif

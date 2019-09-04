@@ -4,7 +4,7 @@
  * @File name: 
  * @Version: 
  * @Date: 2019-08-31 19:08:01 -0700
- * @LastEditTime: 2019-09-04 06:53:48 -0700
+ * @LastEditTime: 2019-09-04 13:50:07 -0700
  * @LastEditors: 
  * @Description: 
  */
@@ -40,7 +40,6 @@ GtkWidget* CreateTalkWindow(void)
     GtkWidget *mylabelcard,*oppolabelcard;
     GtkWidget *mylabel,*friendlabel;
     ChatWindow* Chat; 
-    //= (ChatWindow*)malloc(sizeof(ChatWindow));
 
     //TODO:Chat应该在聊天窗口打开时获取聊天双方的ID（char）
 
@@ -61,29 +60,22 @@ GtkWidget* CreateTalkWindow(void)
 
     //右侧好友资料卡与用户资料卡
     cardPaned = gtk_vbox_new(FALSE,10);
-    //gtk_paned_set_position(cardPaned,250);
     gtk_paned_add2(GTK_PANED(hPaned),cardPaned);
     mylabelcard = gtk_frame_new("个人资料卡");
-    gtk_frame_set_label_align(GTK_FRAME(mylabelcard),0.5,0.5);
+    gtk_widget_set_size_request(mylabelcard,150,230);
+    gtk_frame_set_label_align(GTK_FRAME(mylabelcard),0.5,0);
     oppolabelcard = gtk_frame_new("好友资料卡");
-    gtk_frame_set_label_align(GTK_FRAME(oppolabelcard),0.5,0.5);
+    gtk_widget_set_size_request(oppolabelcard,150,230);
+    gtk_frame_set_label_align(GTK_FRAME(oppolabelcard),0.5,0);
     gtk_box_pack_start(GTK_BOX(cardPaned),oppolabelcard,FALSE,FALSE,0);
-    gtk_gtk_box_pack_start(GTK_BOX(cardPaned),mylabelcard,FALSE,FALSE,0);
+    gtk_box_pack_end(GTK_BOX(cardPaned),mylabelcard,FALSE,FALSE,0);
     gtk_frame_set_shadow_type(GTK_FRAME(oppolabelcard),GTK_SHADOW_ETCHED_OUT);
     gtk_frame_set_shadow_type(GTK_FRAME(mylabelcard),GTK_SHADOW_ETCHED_OUT);
-    mylabel = gtk_label_new("ID: \nIP: \n状态：　\n");
+    mylabel = gtk_label_new("ID: \nIP: \n状态：　在线\n");
     gtk_container_add(GTK_CONTAINER(mylabelcard),mylabel); 
-    friendlabel = gtk_label_new("ID: \nIP: \n状态：　\n");
+    friendlabel = gtk_label_new("ID: \nIP: \n状态：　在线\n");
     gtk_container_add(GTK_CONTAINER(oppolabelcard),friendlabel);
 
-    // mylabelcard.view = gtk_text_view_new();
-    // mylabelcard.view_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(mylabelcard.view));
-    // gtk_text_view_set_editable(GTK_TEXT_VIEW(mylabelcard.view),FALSE);
-    // oppolabelcard.view = gtk_text_view_new();
-    // oppolabelcard.view_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(oppolabelcard.view));
-    // gtk_text_view_set_editable(GTK_TEXT_VIEW(oppolabelcard.view),FALSE);
-    // gtk_paned_pack1(GTK_PANED(cardPaned), oppolabelcard.view,FALSE,FALSE);
-    // gtk_paned_pack2(GTK_PANED(cardPaned), mylabelcard.view,FALSE,FALSE);
     /////////////////////TODO:绑定资料卡显示页///////////////////////////////
     // Card->from = mylabelcard.view_buffer;
     // Card->to = oppolabelcard.view_buffer;
@@ -102,10 +94,6 @@ GtkWidget* CreateTalkWindow(void)
     SendText.view = gtk_text_view_new_with_buffer(SendText.view_buffer);
     SeeText.view_buffer = gtk_text_buffer_new(tagtableshare);
     SeeText.view = gtk_text_view_new_with_buffer(SeeText.view_buffer);
-    // SendText.view = gtk_text_view_new();
-    // SendText.view_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(SendText.view));
-    // SeeText.view = gtk_text_view_new();
-    // SeeText.view_buffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(SeeText.view));
 
     // //创建指针保存聊天信息编辑窗口和显示窗口的位置
     FromToWin *chatwin= (FromToWin *)malloc(sizeof(FromToWin));
@@ -113,10 +101,6 @@ GtkWidget* CreateTalkWindow(void)
     chatwin->to = SeeText.view_buffer;
     chatwin->edit = SendText.view;
     chatwin->show = SeeText.view;
-    //保留信息到结构体中
-    // Chat->ftw = (FromToWin* )malloc(sizeof(FromToWin));
-    // Chat->ftw.from = SendText.view_buffer;
-    // Chat->ftw.to = SeeText.view_buffer;
 
 
     //左下，发送表情与文件的工具栏、文本编辑窗口、发送按钮
@@ -125,8 +109,13 @@ GtkWidget* CreateTalkWindow(void)
     gtk_text_view_set_editable(GTK_TEXT_VIEW(SendText.view),TRUE);
     gtk_paned_add1(GTK_PANED(vPaned),scrolledwinup);
     gtk_container_add(GTK_CONTAINER(scrolledwinup),SeeText.view);
-    gtk_text_view_set_editable(GTK_TEXT_VIEW(SeeText.view),FALSE);//FIXME:
+    gtk_text_view_set_editable(GTK_TEXT_VIEW(SeeText.view),FALSE);
+    gtk_text_view_set_cursor_visible(SeeText.view,FALSE);
 
+    //设置消息显示窗口中文本的字体颜色
+    gtk_text_buffer_create_tag(SeeText.view_buffer,"AutoWrap","wrap_mode",GTK_WRAP_WORD,NULL);//自动换行
+    gtk_text_buffer_create_tag(SeeText.view_buffer,"BLUE","foreground", "blue", NULL);//创建蓝色前景标记
+    gtk_text_buffer_create_tag(SeeText.view_buffer,"GREEN","foreground", "green", NULL);//创建蓝色前景标记
 
 
     // //拖拽
@@ -145,9 +134,6 @@ GtkWidget* CreateTalkWindow(void)
     gtk_container_add(GTK_CONTAINER(TalkWindow), hPaned);
 
     gtk_window_set_resizable(GTK_CONTAINER(TalkWindow),FALSE);//固定窗口的大小
-
-    // gtk_paned_set_wide_handle(GTK_PANED(hPaned),TRUE);//FIXME:
-    // gtk_paned_set_wide_handle(GTK_PANED(cardPaned),TRUE);//FIXME:
 
     gtk_widget_show_all(TalkWindow);
     return TalkWindow;
